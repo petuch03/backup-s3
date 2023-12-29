@@ -32,7 +32,7 @@ tasks.named<Jar>("jar") {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 
     from(configurations.runtimeClasspath.get().map { if (it.isDirectory) it else zipTree(it) })
-    archiveFileName.set("app.jar")
+    archiveFileName.set("s3-backup-tool.jar")
 }
 
 tasks.named<Test>("test") {
