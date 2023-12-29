@@ -1,5 +1,4 @@
 plugins {
-    id("com.github.johnrengelman.shadow") version "7.0.0" // For creating an executable JAR
     id("org.jetbrains.kotlin.jvm") version "1.9.10"
     application
 }
@@ -11,6 +10,7 @@ repositories {
 dependencies {
     implementation("com.amazonaws:aws-java-sdk-s3:1.12.627")
     implementation("io.github.cdimascio:dotenv-java:3.0.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-cli:0.3.6")
     // deps below are to avoid warnings in using Java 9+ SDK
     implementation("javax.xml.bind:jaxb-api:2.3.1")
     implementation("org.glassfish.jaxb:jaxb-core:3.0.0")
@@ -18,8 +18,6 @@ dependencies {
 
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
-    implementation(kotlin("stdlib-jdk8"))
-    implementation("org.jetbrains.kotlinx:kotlinx-cli:0.3.6")
 }
 
 application {
@@ -39,6 +37,5 @@ tasks.named<Jar>("jar") {
 }
 
 tasks.named<Test>("test") {
-    // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
