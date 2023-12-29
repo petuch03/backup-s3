@@ -61,23 +61,23 @@ This is a Kotlin-based application. Use Gradle to compile and build the executab
 gradle jar
 ```
 
-### Example
+## Example
 
 ```bash
-es@M1-ES-7:backup-s3$ java -jar build/libs/app.jar -m backup -l src -r backup-tool/test-src-backup
+es@M1-ES-7:backup-s3$ java -jar build/libs/s3-backup-tool.jar -m backup -l src -r backup-tool/test-src-backup
 File uploaded to S3: backup-tool/test-src-backup/src-20231229_1603.zip
 
-es@M1-ES-7:backup-s3$ java -jar build/libs/app.jar -m restore -l src-backup -r backup-tool/test-src-backup
+es@M1-ES-7:backup-s3$ java -jar build/libs/s3-backup-tool.jar -m restore -l src-backup -r backup-tool/test-src-backup
 Restored backup backup-tool/test-src-backup/src-20231229_1603.zip into src-backup
 
-es@M1-ES-7:backup-s3$ java -jar build/libs/app.jar -m restore -l src-backup -r backup-tool/test-src-backup -bk 20231229_1556
+es@M1-ES-7:backup-s3$ java -jar build/libs/s3-backup-tool.jar -m restore -l src-backup -r backup-tool/test-src-backup -bk 20231229_1556
 Restored backup backup-tool/test-src-backup/src-20231229_1556.zip into src-backup
 
-es@M1-ES-7:backup-s3$ java -jar build/libs/app.jar -m restore -l src-backup -r backup-tool/test-src-backup -rf main/kotlin/petuch03/backups3/App.kt
+es@M1-ES-7:backup-s3$ java -jar build/libs/s3-backup-tool.jar -m restore -l src-backup -r backup-tool/test-src-backup -rf main/kotlin/petuch03/backups3/App.kt
 File 'main/kotlin/petuch03/backups3/App.kt' extracted to 'src-backup'
 Restored backup backup-tool/test-src-backup/src-20231229_1603.zip into src-backup
 
-es@M1-ES-7:backup-s3$ java -jar build/libs/app.jar -m restore -l src-backup -r backup-tool/test-src-backup -rf main/kotlin/petuch03/backups3/App.kt -bk 20231229_1556
+es@M1-ES-7:backup-s3$ java -jar build/libs/s3-backup-tool.jar -m restore -l src-backup -r backup-tool/test-src-backup -rf main/kotlin/petuch03/backups3/App.kt -bk 20231229_1556
 File 'main/kotlin/petuch03/backups3/App.kt' extracted to 'src-backup'
 Restored backup backup-tool/test-src-backup/src-20231229_1556.zip into src-backup
 
