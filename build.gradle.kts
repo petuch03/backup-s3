@@ -9,9 +9,12 @@ repositories {
 }
 
 dependencies {
-    implementation("com.amazonaws:aws-java-sdk-s3:1.12.268")
+    implementation("com.amazonaws:aws-java-sdk-s3:1.12.627")
     implementation("io.github.cdimascio:dotenv-java:3.0.0")
-    implementation("org.apache.commons:commons-compress:1.21") // For compression
+    // deps below are to avoid warnings in using Java 9+ SDK
+    implementation("javax.xml.bind:jaxb-api:2.3.1")
+    implementation("org.glassfish.jaxb:jaxb-core:3.0.0")
+    implementation("org.glassfish.jaxb:jaxb-runtime:3.0.0")
 
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
